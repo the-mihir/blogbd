@@ -3,9 +3,12 @@
 include_once "../classes/register.php";
   $regObj = new Register();
 
-  ifi($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $regObj->addUser($_POST);
+
   }
+    
+  
 ?>
 
 
@@ -51,18 +54,19 @@ include_once "../classes/register.php";
   <body>
 
     <div class="register-container">
-      <span>
+    <span>
         <?php
-
-        if(isset($addUser)) {
-          
-  
-          
+        if (isset($addUser)) {
+        
+            ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $addUser; ?> 
+            </div>
+            <?php
         }
-
         ?>
+    </span>
 
-      </span>
 
       <h2 class="text-center mb-4">Registration Form</h2>
       <form action="" method="POST">
