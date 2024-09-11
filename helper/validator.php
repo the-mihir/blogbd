@@ -1,10 +1,10 @@
 <?php
-class Validator {
+
+class validation{
     public function validation($data){
         $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+        $data = stripcslashes($data);
+        $data = htmlspecialchars($data);   
         return $data;
-    }
+     }
 }
-?>

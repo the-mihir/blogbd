@@ -1,13 +1,17 @@
 <?php
 
-include_once "../classes/register.php";
-  $regObj = new Register();
+  include_once '../classes/Register.php';
+
+  $register = new Register();
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $regObj->addUser($_POST);
+    $addUser = $register->addUser($_POST);
 
   }
-    
+
+
+
+
   
 ?>
 
@@ -24,14 +28,9 @@ include_once "../classes/register.php";
 
     <title>Register Page</title>
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f8f9fa;
-      }
+ 
       .register-container {
+        margin-top: 150px;
         width: 100%;
         max-width: 400px;
         padding: 15px;
@@ -52,15 +51,18 @@ include_once "../classes/register.php";
     </style>
   </head>
   <body>
-
+      <div class="d-flex justify-content-center align-items-center ">
     <div class="register-container">
     <span>
         <?php
         if (isset($addUser)) {
         
             ?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo $addUser; ?> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <?php
         }
@@ -92,6 +94,8 @@ include_once "../classes/register.php";
           <p>Already have an account? <a href="login.php" class="black-text">Login</a></p>
         </div>
       </form>
+    </div>
+
     </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
