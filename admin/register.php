@@ -8,10 +8,6 @@
     $addUser = $register->addUser($_POST);
 
   }
-
-
-
-
   
 ?>
 
@@ -68,9 +64,7 @@
         }
         ?>
     </span>
-
-
-      <h2 class="text-center mb-4">Registration Form</h2>
+        <h2 class="text-center mb-4">Registration Form</h2>
       <form action="" method="POST">
         <div class="form-group">
           <label for="fullName">Full Name</label>
